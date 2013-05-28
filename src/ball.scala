@@ -48,16 +48,16 @@ class BallDetectorScala extends PApplet {
 
   var cp5:ControlP5 = null
 
-  var sliderR:Float = 0.0f
-  var sliderG:Float = 0.0f
-  var sliderB:Float = 0.0f
+  var sliderR:Float = 0.5f
+  var sliderG:Float = 0.5f
+  var sliderB:Float = 0.5f
   var contrast:Int = 0
 
 
   override def setup {
     size(widthCapture * 2, heightCapture * 2)
     frameRate(fpsCapture)
-    cam = new GSCapture(this, widthCapture, heightCapture, "/dev/video0")
+    cam = new GSCapture(this, widthCapture, heightCapture, "/dev/video1")
     opencv = new OpenCV(this)
     opencv.allocate(widthCapture, heightCapture)
     cam.play
